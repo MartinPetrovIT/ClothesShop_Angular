@@ -1,0 +1,23 @@
+{
+  "name": "clothesshop_angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MartinPetrovIT/ClothesShop_Angular.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MartinPetrovIT/ClothesShop_Angular/issues"
+  },
+  "homepage": "https://github.com/MartinPetrovIT/ClothesShop_Angular#readme"
+}
