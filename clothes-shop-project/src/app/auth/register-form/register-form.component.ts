@@ -18,6 +18,27 @@ export class RegisterFormComponent implements OnInit {
   {
 
   }
+  tiles = [
+   {
+    text:"dsada"
+    ,color:'red',
+    rows:2
+    ,cols : 2
+   },
+   {
+    text:"dsada"
+    ,color:'red',
+    rows:2
+    ,cols : 2
+   },
+   {
+    text:"dsada" ,
+    color:'red',
+    rows:2
+    ,cols : 2
+   },
+  ];
+
   ngOnInit(): void {
     console.log('vafsafasfa')
   }

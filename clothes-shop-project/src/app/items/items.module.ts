@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoaderComponent } from './loader/loader.component';
 import { MaterialModule } from '../material.module';
-
+import { ItemsCatalogComponent } from './items-catalog/items-catalog.component';
 
 @NgModule({
   declarations: [     
-    LoaderComponent
+    
+    ItemsCatalogComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
+    ItemsCatalogComponent
   ],
   exports: [
-    LoaderComponent
   ]
 })
-export class SharedModule { }
+export class ItemModule { }
