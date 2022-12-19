@@ -4,23 +4,26 @@ import {HttpEvent, HttpHandler, HttpInterceptor,
 import { Inject, Injectable, Provider } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+import { environment } from '../environments/environment';
+
+
 import { BehaviorSubject, catchError, Observable, of,
   switchMap, throwError, withLatestFrom} from 'rxjs';
 
-//import { environment } from '../environments/environment';
-// import { AuthService } from './auth/auth.service';
-//import { API_ERROR } from './shared/constants';
+ import { AuthService } from './auth/auth.service';
+import { API_ERROR } from './shared/constants';
 
-//const apiURL = environment.apiURL;
+const apiURL = environment.apiURL;
 
 @Injectable()
 export class AppInterceptor implements HttpInterceptor {
   
   constructor(
-    //@Inject(API_ERROR)
+    @Inject(API_ERROR)
     private apiError: BehaviorSubject<Error | null>,
     private router: Router,
-   // private authService: AuthService
+   private authService: AuthService
   ) {}
 
   intercept(
@@ -29,8 +32,8 @@ export class AppInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     if (req.url.startsWith('/api')) {
       req = req.clone({
-       // url: req.url.replace('/api', apiURL),
-        withCredentials: true,
+        url: req.url.replace('/api', apiURL),
+        withCredentials: false,
         setHeaders: {
           'Content-Type': 'application/json',
           Headers: 'x-authorization',
@@ -42,7 +45,7 @@ export class AppInterceptor implements HttpInterceptor {
       catchError((err) =>
         of(
           err.pipe(
-          //  withLatestFrom(this.authService.user$),
+          withLatestFrom(this.authService.user$),
             switchMap(([err, user]) => {
               if (err.status === 401) {
                 if (!user) {

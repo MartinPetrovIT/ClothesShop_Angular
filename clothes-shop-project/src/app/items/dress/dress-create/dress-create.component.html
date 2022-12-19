@@ -1,0 +1,63 @@
+<mat-card>
+    <mat-card-title>Create Dress</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <p>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Name" formControlName="Name">
+            </mat-form-field>
+         </p>
+  
+        <p>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Brand" formControlName="Brand">
+          </mat-form-field>
+       </p>
+  
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Price" formControlName="Price">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Composition" formControlName="Composition">
+    </mat-form-field>
+  </p> 
+  <p>
+    Upload Image:
+    <input type="file" multiple formControlName="importFile"></p> 
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Size" formControlName="Size">
+    </mat-form-field>
+  </p>
+  
+  
+  <p>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </p> 
+
+  <p>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </p>
+  
+   <!-- <p *ngIf="error" class="error">
+    {{ error }}
+  </p>  -->
+  
+  <div class="button">
+    <button type="submit" mat-button>Create</button>
+  </div>
+  
+  </form>
+  </mat-card-content>
+  </mat-card>

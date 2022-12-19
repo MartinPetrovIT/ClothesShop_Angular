@@ -2,16 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material.module';
 import { ItemsCatalogComponent } from './items-catalog/items-catalog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {ItemRouterModule} from './item-routing.module'
+import { DressCreateComponent } from './dress/dress-create/dress-create.component';
+import { DressListComponent } from './dress/dress-list/dress-list.component';
+import { ShoesCreateComponent } from './shoes/shoes-create/shoes-create.component';
+
 
 @NgModule({
   declarations: [     
-    
-    ItemsCatalogComponent
+    DressCreateComponent,
+    ItemsCatalogComponent,
+    DressListComponent,
+    ShoesCreateComponent ,
   ],
   imports: [
+    ItemRouterModule,
     CommonModule,
     MaterialModule,
-    ItemsCatalogComponent
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
   ]

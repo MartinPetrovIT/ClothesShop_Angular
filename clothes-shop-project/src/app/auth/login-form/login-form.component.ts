@@ -1,6 +1,7 @@
 import { Input, Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +12,14 @@ import { Router } from '@angular/router';
 
 export class LoginFormComponent implements OnInit {
 
+  form = this.formBuilder.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(3)]],
+  });
   constructor(
 
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
     private router: Router
   )
   {
@@ -21,17 +28,23 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     console.log('vafsafasfa')
   }
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    
-  });
 
   submit() {
     if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+      const { email,  password } = this.form.value;
+      this.authService.login(email!, password!).subscribe({
+        next: (user) => {
+          this.authService.user = user
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.error('Error from login', err.message);
+        }
+      });
     }
+
   }
+
 // @Input() error: string | null;
 
   @Output() submitEM = new EventEmitter();
