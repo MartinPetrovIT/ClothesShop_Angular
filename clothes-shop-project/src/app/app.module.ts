@@ -6,7 +6,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { appInterceptorProvider } from './app.interseptor';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,11 +36,7 @@ import { CoreModule } from './core/core.module';
     CoreModule,
   ],
   providers:  [
-    appInterceptorProvider,
-    {
-      provide: API_ERROR,
-      useValue: new BehaviorSubject(null),
-    },
+    
   ],
   bootstrap: [AppComponent]
 })
