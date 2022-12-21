@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px;
+}
+
+table {
+    width: 100%;
+  }
+
+  .guest {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    color: white;
+    background-color: rgb(1, 1, 1);
+    padding: 40px;
+    width: 30%;
+    font-size: 30px;
+    border: 2px solid white;
+}

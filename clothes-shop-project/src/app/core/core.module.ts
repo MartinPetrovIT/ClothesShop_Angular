@@ -5,11 +5,11 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-
+import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { MaterialModule } from '../material.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ErrorComponent } from './error/error.component';
-
+import { CarouselModule } from '@coreui/angular';
 
 
 @NgModule({
@@ -22,8 +22,9 @@ import { ErrorComponent } from './error/error.component';
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    
+    RouterModule,CarouselModule,
+
+    IconModule,
     MaterialModule,
   ],
   exports: [

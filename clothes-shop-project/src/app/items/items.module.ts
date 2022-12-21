@@ -7,13 +7,14 @@ import {ItemRouterModule} from './item-routing.module'
 import { DressCreateComponent } from './dress/dress-create/dress-create.component';
 import { DressListComponent } from './dress/dress-list/dress-list.component';
 import { ShoesCreateComponent } from './shoes/shoes-create/shoes-create.component';
-
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [     
     DressCreateComponent,
     ItemsCatalogComponent,
     DressListComponent,
+    OrderHistoryComponent,
     ShoesCreateComponent ,
   ],
   imports: [

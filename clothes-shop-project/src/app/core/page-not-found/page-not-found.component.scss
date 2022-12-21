@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+  }
+
+.error-page {
+    text-align: left;
+}
+
+.error-page h1 {
+    color: black;
+    letter-spacing: 15px;
+    font-size: 120px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.error-page p {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
